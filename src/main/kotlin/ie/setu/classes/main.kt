@@ -9,6 +9,23 @@ fun main(args: Array<String>) {
 
     for ((index, value) in persons.withIndex())
         println("$index: $value")
+
+    println("\nUsing Lambdas:\n")
+    println("\nUsing Lambdas:\n")
+    println("\nFiltering first name as John:")
+    persons
+        .filter {it.firstName.contains("John")}
+        .forEach { println(it) }
+
+    println("\nSorting by last name:")
+    persons
+        .sortedBy {it.lastName}
+        .forEach { println(it) }
+
+    println("\nSorting by last name, last name uppercased:")
+    persons
+        .sortedBy {it.lastName}
+        .forEach { println("Person: ${it.firstName}, ${it.lastName.uppercase()}")}
 }
 
 fun personInfo(){
